@@ -1,0 +1,20 @@
+builddrafts = true
+theme = "hugo-uno"
+languageCode = "en-us"
+title = "Episodic Genius"
+author = "Carl Baldwin"
+copyright = "© 2015, Carl Baldwin.  All rights reserved."
+
+baseurl = "http://blog.episodicgenius.com/"
+canonifyurls = true
+
+[index]
+  category = "categories"
+  tag = "tags"
+
+[Params]
+  github = "ecbaldwin"
+  twitter = "CarlNBaldwin"
+  email = "carl@episodicgenius.com"
+  description = "occurring occasionally and at irregular intervals"
+  cover = "/images/background-cover.jpg"
