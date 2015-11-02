@@ -40,5 +40,6 @@ References
 ==========
 The following are links for references for working with Hugo and Markdown:
 
+* Hugo docs: http://gohugo.io/overview/introduction/
 * Markdown Cheatsheet: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * VIM spell checking: http://robots.thoughtbot.com/vim-spell-checking
