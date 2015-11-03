@@ -1,0 +1,16 @@
+#!/bin/bash
+
+cd $(dirname "$0")
+
+die() {
+    echo >&2 ${1+"$@"}
+    exit 1
+}
+
+git diff-index --quiet HEAD || die "Looks like you have uncommitted changes."
+git fetch gerrit || die "Git fetch failed"
+git checkout gerrit/master
+rm -rf public
+hugo || die "Hugo failed"
+
+exec rsync -avz --delete public docker.cobaldwins.net:/mnt/episodicgenius/

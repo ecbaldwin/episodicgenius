@@ -26,15 +26,14 @@ To generate this site, follow the instructions below:
    * `git config --add gitreview.username "$user"`
    * `git review -s`
 1. Build the site using hugo
-   * `hugo`
-1. Sync the content out to your hosting provider:
-   * `# TODO rsync -avz -e ssh public/* carlbaldwin@sadira.dreamhost.com:blog.episodicgenius.com/`
+   * `hugo` or `hugo server --watch`
+1. Publish the content out to your hosting provider:
+   * `./publish`
 1. You're done!
 
-To create new posts and run a local server ...
+To create new posts ...
 
 *  `hugo new post/welcome-to-hugo.md`
-*  `hugo server --watch`
 
 References
 ==========
