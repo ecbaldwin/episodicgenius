@@ -1,0 +1,13 @@
++++
+title = "Running"
+date = 2012-06-09T11:37:00Z
+updated = 2012-06-09T11:37:46Z
+blogimport = true
+aliases = [ "/2012/06/running.html" ]
+[author]
+	name = "Carl Baldwin"
+	uri = "https://www.blogger.com/profile/13229540633336228424"
+
++++
+
+This post isn't about computers at all. &nbsp;The next couple of posts won't be either. &nbsp;It is about something that I never thought that I would write about.<br /><br />Before age 30, I thought I hated running. &nbsp;It was painful and painfully boring. &nbsp;I never thought I could enjoy it. &nbsp;I was on the track team in high school as a high jumper and they let me skip all of the running only when I had decided to quit the team. &nbsp;I could write for paragraphs to stress to you how badly I felt toward the activity but I won't. &nbsp;Just know that I had strong negative feelings. &nbsp;Enough said.<br /><br />When I had just turned 30 years old I went to climb a fourteener in Colorado, Long's Peak. &nbsp;I'd never done that before but I thought that I was in shape for it. &nbsp;I went with a couple of guys about my age, a few high school students -- who incidentally were cross country runners -- and a 40 year old friend.<br /><br />I didn't mind that the high school boys were running circles around me. &nbsp;It hurt a little bit that the guys in their 30s were doing better than I was but I could handle that. &nbsp;The thing that really hit hard was that my 40 year old friend was doing a darn good job of keeping up with the boys. &nbsp;As I grew more and more exhausted and wondered if I'd ever get through the day I realized that I needed to do something. &nbsp;In 10 years, I wanted to be like my friend and keep up with those kids.<br /><br />I didn't immediately think about running. &nbsp;I started with a lot of other things over the next couple of years. &nbsp;I started eating a little better and trying to get to a better weight, thought I was never fat. &nbsp;I put more energy in to two activities that I already loved: &nbsp;swimming and bicycling. &nbsp;I also did a lot more walking. &nbsp;From that day, I have only gotten better. &nbsp;In fact, I would say that on that day I was in the worst shape of any other day in my life.<br /><br />I was on a good trajectory and I was happy about that. &nbsp;However, I knew that I had a ways to go. &nbsp;Somewhere around age 32 or 33 I realized that I probably needed to come to terms with my intense hatred for running. &nbsp;I got out one day and ran around the block. &nbsp;It was just one kilometer. &nbsp;I can't remember if I walked in the middle but I was pretty bad. &nbsp;It hurt but I'd done it. &nbsp;I started running.
