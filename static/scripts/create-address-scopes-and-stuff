@@ -1,0 +1,51 @@
+#!/bin/bash
+
+set -e
+
+. ~/devstack/openrc admin admin
+neutron subnetpool-create --shared --pool-prefix 172.16.0.0/21 --default-prefixlen 24 ip4-1
+neutron subnetpool-create --shared --pool-prefix 172.16.4.0/22 --default-prefixlen 24 ip4-2
+neutron subnetpool-create --shared --pool-prefix fd9f:9126:ee3d::/48 --default-prefixlen 64 ip6-1
+neutron subnetpool-create --shared --pool-prefix fd55:acae:de30::/48 --default-prefixlen 64 ip6-2
+
+neutron address-scope-create --shared ip4-1-scope 4
+neutron address-scope-create --shared ip4-2-scope 4
+neutron address-scope-create --shared ip6-1-scope 6
+
+neutron subnetpool-update --address-scope ip4-1-scope ip4-1
+# This one should fail
+neutron subnetpool-update --address-scope ip4-1-scope ip4-2 || true
+neutron subnetpool-update --address-scope ip4-2-scope ip4-2
+
+neutron subnetpool-update --address-scope ip6-1-scope ip6-1
+neutron subnetpool-update --address-scope ip6-1-scope ip6-2
+
+
+# Create the networks
+. ~/devstack/openrc demo demo
+neutron net-create network-1-1
+neutron net-create network-1-2
+neutron net-create network-2-1
+neutron net-create network-2-2
+
+# Create the subnets
+neutron subnet-create --name ip4-1-subnet-1 --subnetpool ip4-1 network-1-1
+neutron subnet-create --name ip4-1-subnet-2 --subnetpool ip4-1 network-1-2 172.16.4.0/24
+neutron subnet-create --name ip4-2-subnet-1 --subnetpool ip4-2 network-2-1
+neutron subnet-create --name ip4-2-subnet-2 --subnetpool ip4-2 network-2-2
+neutron subnet-create --name ip6-1-subnet-1 --subnetpool ip6-1 network-1-1 --ipv6-ra-mode slaac --ipv6-address-mode slaac --ip_version 6
+neutron subnet-create --name ip6-1-subnet-2 --subnetpool ip6-1 network-1-2 --ipv6-ra-mode slaac --ipv6-address-mode slaac --ip_version 6
+neutron subnet-create --name ip6-2-subnet-1 --subnetpool ip6-2 network-2-1 --ipv6-ra-mode slaac --ipv6-address-mode slaac --ip_version 6
+neutron subnet-create --name ip6-2-subnet-2 --subnetpool ip6-2 network-2-2 --ipv6-ra-mode slaac --ipv6-address-mode slaac --ip_version 6
+
+# Create the router interfaces
+router=router1
+neutron router-interface-add $router ip4-1-subnet-1
+neutron router-interface-add $router ip4-1-subnet-2
+# This one is expected to fail because they overlap even though they are different scopes
+neutron router-interface-add $router ip4-2-subnet-1 || true
+neutron router-interface-add $router ip4-2-subnet-2
+neutron router-interface-add $router ip6-1-subnet-1
+neutron router-interface-add $router ip6-1-subnet-2
+neutron router-interface-add $router ip6-2-subnet-1
+neutron router-interface-add $router ip6-2-subnet-2
