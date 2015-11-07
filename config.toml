@@ -8,6 +8,8 @@ copyright = "© 2015, Carl Baldwin.  All rights reserved."
 baseurl = "http://blog.episodicgenius.com/"
 canonifyurls = true
 
+GoogleAnalytics = "UA-69800342-1"
+
 [index]
   category = "categories"
   tag = "tags"
