@@ -1,7 +1,7 @@
 +++
 date = "2015-11-03T14:00:00-07:00"
 title = "Neutron Subnet Pools"
-Tags = ["Openstack Neutron L3 Development"]
+Tags = ["Openstack", "Neutron", "L3", "Development"]
 
 +++
 
