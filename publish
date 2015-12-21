@@ -13,4 +13,4 @@ git checkout gerrit/master
 rm -rf public
 hugo || die "Hugo failed"
 
-exec rsync -avz --delete public docker.cobaldwins.net:/mnt/episodicgenius/
+exec rsync -avz --delete public carl@blog.episodicgenius.com:episodicgenius/
