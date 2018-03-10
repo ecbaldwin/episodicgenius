@@ -13,4 +13,4 @@ git checkout gerrit/master
 rm -rf public
 hugo || die "Hugo failed"
 
-exec rsync -avz --delete public carl@blog.episodicgenius.com:episodicgenius/
+exec rsync -avz --delete public ubuntu@blog.episodicgenius.com:episodicgenius/
