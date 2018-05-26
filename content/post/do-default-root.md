@@ -25,9 +25,8 @@ My normal flows were broken.
 
 Enter my new `do-bootstrap.yaml` playbook:
 
-{{< highlight yaml >}}
-# Digital ocean starts images out with root access. This bootstrap playbook
-# adds a user and sets it up for whatever else.
+```
+# Create a non-privileged user with sudo access and disable root login
 - hosts: all
   vars:
     username: carl
@@ -36,6 +35,7 @@ Enter my new `do-bootstrap.yaml` playbook:
     group:
       name: "{{ username }}"
       state: present
+  # New user's password is locked (i.e. no password access allowed)
   - name: Add user
     user:
       name: "{{ username }}"
@@ -43,6 +43,7 @@ Enter my new `do-bootstrap.yaml` playbook:
       groups: sudo
       shell: /bin/bash
       append: yes
+  # I assume I always want to use the first key in local authorized_keys
   - name: get key from file
     local_action:
       module: shell
@@ -53,6 +54,7 @@ Enter my new `do-bootstrap.yaml` playbook:
       user: "{{ username }}"
       key: "{{ ssh_key_action.stdout }}"
   - name: enable passwordless sudo
+    # This might be more elegant if I create a file in /etc/sudoers.d/
     lineinfile:
       path: /etc/sudoers
       state: present
@@ -67,6 +69,7 @@ Enter my new `do-bootstrap.yaml` playbook:
     notify:
       - restart sshd
   - name: Disable password login
+    # I think this is already set this way, but just in case
     lineinfile:
       dest: /etc/ssh/sshd_config
       regexp: "^PasswordAuthentication "
@@ -80,11 +83,16 @@ Enter my new `do-bootstrap.yaml` playbook:
         name: sshd
         state: restarted
         daemon_reload: yes
-{{< /highlight >}}
+```
 
 It is now the first thing that I run after booting a new droplet on DO. It gets
 me to the point where many other cloud images start and fits well into my
-automation.
+automation. You might notice that this playbook is not idempotent. Once I run
+it, it cannot be run again because it assumes that it is running under a
+privileged user and does not bother to escalate. This is okay given where I call
+it in my VM creation process. I have my own tool that will boot the VM using the
+API and then immediate run a couple of one-off playbooks like this. Then, I use
+a second set of idempotent playbooks which I run periodically.
 
 One nice advantage to this flow is that I get to pick my own username. I could
 always do that with any other image, but I never bothered. This forced me into
