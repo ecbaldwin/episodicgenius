@@ -25,7 +25,7 @@ My normal flows were broken.
 
 Enter my new `do-bootstrap.yaml` playbook:
 
-{{< highlight yaml >}}
+```
 # Create a non-privileged user with sudo access and disable root login
 - hosts: all
   vars:
@@ -83,7 +83,7 @@ Enter my new `do-bootstrap.yaml` playbook:
         name: sshd
         state: restarted
         daemon_reload: yes
-{{< /highlight >}}
+```
 
 It is now the first thing that I run after booting a new droplet on DO. It gets
 me to the point where many other cloud images start and fits well into my
