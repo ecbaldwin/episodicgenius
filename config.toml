@@ -5,7 +5,6 @@ title = "Episodic Genius"
 author = "Carl Baldwin"
 copyright = "© 2018, Carl Baldwin.  All rights reserved."
 
-baseurl = "https://blog.episodicgenius.com/"
 canonifyurls = true
 
 GoogleAnalytics = "UA-69800342-1"
