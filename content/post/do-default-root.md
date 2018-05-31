@@ -30,6 +30,7 @@ Enter my new `do-bootstrap.yaml` playbook:
 - hosts: all
   vars:
     username: carl
+    ansible_user: root
   tasks:
   - name: Add group
     group:
