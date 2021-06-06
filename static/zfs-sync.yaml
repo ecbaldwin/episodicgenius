@@ -1,0 +1,62 @@
+---
+children:
+    - name: emily
+      autosnap: true
+      master:
+          guid: "5190209462096659097"
+      apprentices:
+          - guid: "13921699217410482754"
+    - name: photos
+      autosnap: true
+      master:
+          guid: "13921699217410482754"
+      apprentices:
+          - guid: "5190209462096659097"
+    - name: documents
+      autosnap: true
+      master:
+          guid: "12101185501976536147"
+      apprentices:
+          - guid: "13921699217410482754"
+          - guid: "5190209462096659097"
+    - name: carl
+      autosnap: true
+      master:
+          guid: "12101185501976536147"
+      apprentices:
+          - guid: "13921699217410482754"
+          - guid: "5190209462096659097"
+    - name: archive
+      autosnap: true
+      master:
+          guid: "13921699217410482754"
+      apprentices:
+          - guid: "5190209462096659097"
+    - name: cicd
+      autosnap: true
+      master:
+          guid: "13921699217410482754"
+      apprentices:
+          - guid: "5190209462096659097"
+    - name: gerrit
+      autosnap: true
+      master:
+          guid: "13921699217410482754"
+      apprentices:
+          - guid: "5190209462096659097"
+    - name: money
+      autosnap: true
+      master:
+          guid: "13921699217410482754"
+      apprentices:
+          - guid: "5190209462096659097"
+disks:
+    - name: sandisk
+      guid: 5190209462096659097
+      note: "1GB external disk"
+    - name: zfs
+      notes: "Carl's 2015 macbook pro"
+      guid: 12101185501976536147
+    - name: tank
+      notes: "HP server under my desk"
+      guid: 13921699217410482754
