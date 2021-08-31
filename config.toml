@@ -3,7 +3,7 @@ theme = "hugo-uno"
 languageCode = "en-us"
 title = "Episodic Genius"
 author = "Carl Baldwin"
-copyright = "© 2018, Carl Baldwin.  All rights reserved."
+copyright = "© 2021, Carl Baldwin.  All rights reserved."
 
 canonifyurls = true
 
