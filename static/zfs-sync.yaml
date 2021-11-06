@@ -12,6 +12,12 @@ children:
           guid: "13921699217410482754"
       apprentices:
           - guid: "5190209462096659097"
+    - name: carl-photos
+      autosnap: true
+      master:
+          guid: "12101185501976536147"
+      apprentices:
+          - guid: "13921699217410482754"
     - name: documents
       autosnap: true
       master:
