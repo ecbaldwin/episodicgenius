@@ -7,8 +7,6 @@ copyright = "© 2024, Carl Baldwin.  All rights reserved."
 
 canonifyurls = true
 
-GoogleAnalytics = "UA-69800342-1"
-
 [index]
   category = "categories"
   tag = "tags"

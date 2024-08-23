@@ -5,7 +5,7 @@
     </span>
     <header class="
         {{ if .IsNode }}
-        {{ if or (eq .URL "/post/") (in .URL "/tags/") (in .URL "/categories/") }}
+        {{ if or (eq .RelPermalink "/post/") (in .RelPermalink "/tags/") (in .RelPermalink "/categories/") }}
             panel-cover panel-cover--collapsed
         {{ else }}
                 panel-cover
@@ -27,7 +27,9 @@
                     <nav class="cover-navigation cover-navigation--primary">
                         <ul class="navigation">
                             <li class="navigation__item"><a href="{{ .Site.BaseURL }}#blog" title="link to {{ .Site.Title }} blog" class="blog-button">Blog</a> </li>
-                            <li class="navigation__item"><a href="{{ .RSSLink }}" title="RSS Feed" class="blog-button"><i class="fa fa-rss"></i></a> </li>
+                            {{ with .OutputFormats.Get "RSS" }}
+                            <li class="navigation__item"><a href="{{ .RelPermalink }}" title="RSS Feed" class="blog-button"><i class="fa fa-rss"></i></a> </li>
+                            {{ end }}
                             </br> {{ if .Site.Params.cv }}
                             <li class="navigation__item"><a href="{{ .Site.Params.cv  }}" title="link to my CV " class="blog-button">CV</a> </li>
                             </br> {{ end }} </ul>
