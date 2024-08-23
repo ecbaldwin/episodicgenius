@@ -4,15 +4,15 @@
             <i class="fa fa-times btn-mobile-close__icon hidden"> </i>
     </span>
     <header class="
-        {{ if .IsNode }}
-        {{ if or (eq .RelPermalink "/post/") (in .RelPermalink "/tags/") (in .RelPermalink "/categories/") }}
+        {{- if .IsNode -}}
+        {{- if or (eq .RelPermalink "/post/") (in .RelPermalink "/tags/") (in .RelPermalink "/categories/") -}}
             panel-cover panel-cover--collapsed
-        {{ else }}
+        {{- else -}}
                 panel-cover
-        {{ end }}
-        {{ else }}
+        {{- end -}}
+        {{- else -}}
             panel-cover panel-cover--collapsed
-        {{ end }}" {{ if .Site.Params.cover }} style="background-image: url({{ .Site.Params.cover }})" {{ end }}>
+        {{- end -}}" {{ if .Site.Params.cover -}} style="background-image: url('{{ .Site.Params.cover }}');" {{ end }}>
     <div class="panel-main">
         <div class="panel-main__inner panel-inverted">
             <div class="panel-main__content"> {{ if .Site.Params.logo }}
@@ -49,7 +49,7 @@
         }
     </style>
 
-    <header class="panel-cover panel-cover--collapsed" style="background-image: url({{ .Site.Params.cover }})">
+    <header class="panel-cover panel-cover--collapsed" style="background-image: url('{{ .Site.Params.cover }}');">
         <div class="panel-main">
             <div class="panel-main__inner panel-inverted">
                 <div class="panel-main__content"> {{ if .Site.Params.logo }}
