@@ -13,7 +13,6 @@ canonifyurls = true
 
 [Params]
   github = "ecbaldwin"
-  twitter = "CarlNBaldwin"
   email = "carl@episodicgenius.com"
   description = "occurring occasionally and at irregular intervals"
   cover = "/images/background-cover.jpg"
