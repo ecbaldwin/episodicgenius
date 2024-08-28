@@ -7,7 +7,7 @@ Params:
     includejs:  include needed js files
 -->
 {{ if $.Get "includejs" }}
-        <script src="{{ $.Page.Site.BaseURL }}/js/Chart.js"></script>
+        <script src="/js/Chart.js"></script>
 {{ end }}
 
 {{ with .Get "url" }}

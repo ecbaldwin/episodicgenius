@@ -1,7 +1,7 @@
 +++
 date = "2024-08-27T20:00:00-06:00"
-Description = "Amff and Quaff"
-Tags = ["Energy", "Quaff", "Amff"]
+title = "Amff and Quaff"
+tags = ["Energy", "Quaff", "Amff"]
 menu = "main"
 +++
 
