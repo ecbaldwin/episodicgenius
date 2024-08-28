@@ -1,9 +1,9 @@
-+++
-date = "2024-08-27T20:00:00-06:00"
-title = "Amff and Quaff"
-tags = ["Energy", "Quaff", "Amff"]
-menu = "main"
-+++
+---
+date: 2024-08-27T20:00:00-06:00
+title: Amff and Quaff
+tags: ["energy", "quaff", "amff"]
+
+---
 
 I bought my first electric vehicle (EV) recently: a 2017 Chevy Bolt with a new
 battery. With electric comes a whole new way to think about fueling it up. It
