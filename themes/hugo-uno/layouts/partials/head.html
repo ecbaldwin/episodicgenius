@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title> {{ .Title }} &middot; {{ .Site.Title }} </title>
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/uno.min.css" />
-    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/lightGallery.css" />
+    <link rel="stylesheet" type="text/css" href="/css/uno.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/lightGallery.css" />
     <!-- Icons -->
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.ico">
     <!-- RSS -->
-    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ with .OutputFormats.Get "RSS" }}
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+    {{ end }}
     <!-- Script -->
-    <script src="{{ .Site.BaseURL }}/js/jquery.min.js"></script>
-    <script src="{{ .Site.BaseURL }}/js/main.min.js">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.min.js">
     </script>
 </head>
