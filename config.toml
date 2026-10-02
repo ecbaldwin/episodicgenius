@@ -1,3 +1,4 @@
+baseURL = "https://blog.episodicgenius.com/"
 builddrafts = true
 theme = "hugo-uno"
 languageCode = "en-us"
@@ -16,3 +17,6 @@ canonifyurls = true
   email = "carl@episodicgenius.com"
   description = "occurring occasionally and at irregular intervals"
   cover = "/images/background-cover.jpg"
+
+[markup.goldmark.renderer]
+  unsafe = true
