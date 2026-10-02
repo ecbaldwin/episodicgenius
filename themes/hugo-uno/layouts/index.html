@@ -5,10 +5,8 @@
             <div class="content-wrapper__inner">
                 <section id="main">
                     <div>
-                        {{ range first 10 .Site.AllPages }}
-                            {{ if and (eq .Type "post") (eq .Kind "page") }}
-                                {{ .Render "summary"}}
-                            {{ end }}
+                        {{ range first 10 (where .Site.RegularPages "Type" "post") }}
+                            {{ .Render "summary"}}
                         {{ end }}
                     </div>
                     </br>
